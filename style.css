@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #020202;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* =========================================================
+   FUNDOS EM LOOP DINÂMICO (OCUPA A TELA INTEIRA FIXA)
+   ========================================================= */
+.global-bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Fica no fundo absoluto */
+  overflow: hidden;
+  pointer-events: none;
+  background: #020202;
+}
+
+/* Esferas Gigantes de Luz/Fumaça em Movimento 3D */
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+}
+
+/* Fumaça/Luz Vermelha Viva */
+.blob-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.7) 0%, rgba(120, 0, 0, 0.1) 70%);
+  top: -100px;
+  left: -100px;
+  animation: moveBlob1 18s ease-in-out infinite alternate;
+}
+
+/* Fumaça/Luz Vinho Profundo */
+.blob-2 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(160, 0, 10, 0.6) 0%, rgba(30, 0, 0, 0.1) 70%);
+  bottom: -150px;
+  right: -100px;
+  animation: moveBlob2 22s ease-in-out infinite alternate;
+}
+
+/* Centro de Luz Neon Pulsante */
+.blob-3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 30, 40, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+  top: 40%;
+  left: 30%;
+  animation: moveBlob3 15s ease-in-out infinite alternate;
+}
+
+/* Caso queira usar arquivo de vídeo MP4 */
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+}
+
+/* Animações fluidas em Loop de movimento */
+@keyframes moveBlob1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(300px, 200px) scale(1.3); }
+  100% { transform: translate(100px, 400px) scale(0.9); }
+}
+
+@keyframes moveBlob2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-250px, -200px) scale(1.2); }
+  100% { transform: translate(-100px, -450px) scale(0.85); }
+}
+
+@keyframes moveBlob3 {
+  0% { transform: translate(0, 0) scale(0.8); opacity: 0.3; }
+  50% { transform: translate(-150px, 150px) scale(1.4); opacity: 0.6; }
+  100% { transform: translate(200px, -100px) scale(1); opacity: 0.3; }
+}
+
+/* =========================================================
+   ESTRUTURA DO SITE COM GLASSMORPHISM (VIDRO TRANSLÚCIDO)
+   ========================================================= */
+
+.hero-section {
+  padding: 50px 20px 30px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: #e50914;
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.8);
+}
+
+.main-title {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+}
+
+.subtitle {
+  color: #dddddd;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 35px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* BARRA HORIZONTAL DE CATEGORIAS */
+.categories-bar {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 10px 20px 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e50914 rgba(0,0,0,0.5);
+}
+
+.categories-bar::-webkit-scrollbar {
+  height: 4px;
+}
+.categories-bar::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 4px;
+}
+
+.category-pill {
+  background: rgba(15, 15, 15, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 9px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #eee;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.category-pill:hover, .category-pill.active {
+  background: #e50914;
+  color: #fff;
+  border-color: #e50914;
+  box-shadow: 0 0 18px rgba(229, 9, 20, 0.6);
+}
+
+.category-pill strong {
+  font-size: 11px;
+  opacity: 0.85;
+  margin-left: 4px;
+}
+
+/* CATÁLOGO HORIZONTAL */
+.catalog-container {
+  max-width: 1250px;
+  margin: 20px auto 60px auto;
+  padding: 0 20px;
+}
+
+.row-section {
+  margin-bottom: 45px;
+}
+
+.row-title {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-left: 4px solid #e50914;
+  padding-left: 12px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+.horizontal-row {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding: 10px 5px 20px 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #e50914 rgba(0,0,0,0.5);
+}
+
+.horizontal-row::-webkit-scrollbar {
+  height: 6px;
+}
+.horizontal-row::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 6px;
+}
+
+.poster-card {
+  flex: 0 0 180px;
+  background: rgba(12, 12, 12, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.poster-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  border-color: #e50914;
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.55);
+}
+
+.poster-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.poster-card p {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 10px 6px;
+  text-align: center;
+  background-color: rgba(5, 5, 5, 0.85);
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* PLANOS / PREÇOS */
+.plans-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.plans-section h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 50px;
+  letter-spacing: 1.5px;
+}
+
+.plans-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.plan-card {
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 320px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.plan-card.featured {
+  border: 2px solid #e50914;
+  box-shadow: 0 0 35px rgba(229, 9, 20, 0.45);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: #e50914;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 10px;
+}
+
+.plan-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.price span {
+  font-size: 14px;
+  color: #aaa;
+  font-weight: 400;
+}
+
+.plan-card ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.plan-card li {
+  font-size: 13px;
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-red {
+  background: #e50914;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(229, 9, 20, 0.5);
+}
+
+.btn-red:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(229, 9, 20, 0.7);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
+  color: #777;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+  .main-title { font-size: 26px; }
+  .poster-card { flex: 0 0 140px; }
+}
+/* ==========================================================================
+   ESTILO DO MODAL (JANELA FLUTUANTE DE TRAILER E SPOILER)
+   ========================================================================== */
+
+/* Fundo escuro transparente que cobre a tela inteira */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Caixa centralizada do modal */
+.modal-content {
+    background: #18181b;
+    color: #ffffff;
+    max-width: 650px;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 1px solid #27272a;
+}
+
+/* Botão "X" de fechar no canto superior direito */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10;
+    line-height: 1;
+    background: rgba(0, 0, 0, 0.5);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: #e11d48;
+}
+
+/* Enquadramento responsivo para o vídeo do YouTube */
+.modal-video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Mantém proporção de TV (16:9) */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.modal-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Área de texto (Título e Spoiler) */
+.modal-info {
+    padding: 20px;
+}
+
+.modal-info h2 {
+    margin-bottom: 8px;
+    color: #e11d48;
+    font-size: 1.4rem;
+}
+
+.modal-info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #d4d4d8;
+}
+/* Container do Alerta */
+.urgency-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 35px 0;
+    padding: 0 20px;
+}
+
+/* Caixa com visual Dark Mode Profissional */
+.urgency-box {
+    background: #141414; /* Fundo escuro padrão streaming */
+    color: #e5e5e5;
+    padding: 14px 22px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(229, 9, 20, 0.35); /* Borda vermelha elegante e discreta */
+    text-align: left;
+    max-width: 520px;
+    width: 100%;
+    letter-spacing: 0.2px;
+}
+
+.urgency-box p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.urgency-box strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Ponto de Pulso Minimalista */
+.urgency-pulse {
+    width: 8px;
+    height: 8px;
+    background-color: #e50914; /* Vermelho oficial */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #e50914;
+    animation: pulse-glow 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse-glow {
+    0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+    70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 6px rgba(229, 9, 20, 0); }
+    100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+}

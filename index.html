@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <title>Easy Movie - Seu Entretenimento Começa Aqui</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================= -->
+  <!-- FUNDO DINÂMICO EM LOOP (SE MOVE ATRÁS DE TODO O SITE)     -->
+  <!-- ========================================================= -->
+  <div class="global-bg-animation">
+    <div class="bg-glow blob-1"></div>
+    <div class="bg-glow blob-2"></div>
+    <div class="bg-glow blob-3"></div>
+    <div class="stars-overlay"></div>
+    
+    <!-- Se quiser testar um VÍDEO MP4 real de fundo no futuro, basta desmarcar o código abaixo: -->
+    <!-- 
+    <video autoplay loop muted playsinline class="bg-video">
+      <source src="assets/fundo-vermelho.mp4" type="video/mp4">
+    </video> 
+    -->
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="hero-section">
+    <div class="logo">EASY <span>MOVIE</span></div>
+    
+    <h1 class="main-title">SEU ENTRETENIMENTO COMEÇA AQUI</h1>
+    <p class="subtitle">Filmes e séries para todos os gostos, em um só lugar.</p>
+
+    <!-- BARRA HORIZONTAL DE CATEGORIAS -->
+    <div class="categories-bar">
+      <span class="category-pill active">Todos</span>
+      <span class="category-pill">Ação <strong>2.116</strong></span>
+      <span class="category-pill">Aventura <strong>1.099</strong></span>
+      <span class="category-pill">Animação <strong>3.003</strong></span>
+      <span class="category-pill">Cinema TV <strong>791</strong></span>
+      <span class="category-pill">Comédia <strong>5.019</strong></span>
+      <span class="category-pill">Crime <strong>2.156</strong></span>
+      <span class="category-pill">Documentário <strong>1.421</strong></span>
+      <span class="category-pill">Drama <strong>7.506</strong></span>
+      <span class="category-pill">Terror <strong>1.831</strong></span>
+      <span class="category-pill">Ficção Científica <strong>1.240</strong></span>
+    </div>
+  </header>
+
+  <!-- CATÁLOGO HORIZONTAL -->
+  <main class="catalog-container">
+    
+    <!-- FILEIRA 1: EM ALTA AGORA -->
+    <section class="row-section">
+      <h2 class="row-title">EM ALTA AGORA</h2>
+      <div class="horizontal-row">
+        <div class="poster-card" onclick="abrirModal('Supergirl')">
+          <img src="assets/SuperGirl.jfif" alt="Supergirl">
+          <p>SUPERGIRL</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Homem-Aranha: Brand New Day')">
+          <img src="assets/Homem Aranha .jfif" alt="Homem-Aranha">
+          <p>HOMEM-ARANHA</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Élite')">
+          <img src="assets/Elite.png" alt="Elite">
+          <p>ELITE</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Teen Wolf O Filme')">
+          <img src="assets/Teen Wolf O Filme.webp" alt="Teen Wolf O Filme">
+          <p>TEEN WOLF - O FILME</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Lupin')">
+          <img src="assets/Lupin.png" alt="Lupin">
+          <p>LUPIN</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Premonição 6: Laços de Sangue')">
+          <img src="assets/Premonição 6 Laços de Sangue.jpg" alt="Premonição 6">
+          <p>PREMONIÇÃO 6</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILEIRA 2: MAIS PROCURADOS -->
+    <section class="row-section">
+      <h2 class="row-title">MAIS PROCURADOS</h2>
+      <div class="horizontal-row">
+        <div class="poster-card" onclick="abrirModal('Amanhecer - Parte 1')">
+          <img src="assets/Amanhecer - Parte 1.jfif" alt="Amanhecer - Parte 1">
+          <p>Amanhecer - Parte 1</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('O Mentalista')">
+          <img src="assets/O Mentalista.jfif" alt="O Mentalista">
+          <p>O MENTALISTA</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Supernatural')">
+          <img src="assets/Supernatural.jfif" alt="Supernatural">
+          <p>SUPERNATURAL</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Breaking Bad')">
+          <img src="assets/Breaking Bad.jfif" alt="Breaking Bad">
+          <p>BREAKING BAD</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Prison Break')">
+          <img src="assets/Prision Break.jfif" alt="Prison Break">
+          <p>PRISON BREAK</p>
+        </div>
+        <div class="poster-card" onclick="abrirModal('Teen Wolf (A Série)')">
+          <img src="assets/Teen Wolf Serie.jfif" alt="Teen Wolf Série">
+          <p>TEEN WOLF - A SÉRIE</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SEÇÃO DE PLANOS -->
+  <section class="plans-section">
+    <h2>ESCOLHA O PLANO IDEAL PARA VOCÊ</h2>
+    
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>PLANO BÁSICO</h3>
+        <div class="price">R$ 29,90 <span>/mês</span></div>
+        <ul>
+          <li>Acesso a filmes e séries em HD</li>
+          <li>1 Tela simultânea</li>
+          <li>Suporte via WhatsApp</li>
+        </ul>
+        <a href="#" class="btn btn-red">QUERO ESSE PLANO</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="badge">MAIS VENDIDO</div>
+        <h3>PLANO COMPLETO</h3>
+        <div class="price">R$ 39,90 <span>/mês</span></div>
+        <ul>
+          <li>Acesso ilimitado Ultra HD / 4K</li>
+          <li>Telas simultâneas liberadas</li>
+          <li>Canais ao vivo + Esportes</li>
+          <li>Suporte Prioritário 24/7</li>
+        </ul>
+        <a href="#" class="btn btn-red">QUERO O PLANO COMPLETO</a>
+      </div>
+    </div>
+  </section>
+</section>
+<div class="urgency-container">
+    <div class="urgency-box">
+        <span class="urgency-pulse"></span>
+        <p>🚨 <strong>ÚLTIMOS 11 ACESSOS:</strong> disponíveis neste lote promocional!</p>
+    </div>
+</div>
+
+<!-- ESTRUTURA DO MODAL (JANELA FLUTUANTE) -->
+<div id="modalTrailer" class="modal-overlay">
+    <div class="modal-content">
+       <span class="modal-close" onclick="fecharModal()">&times;</span>
+        <div class="modal-video-container">
+            <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="modal-info">
+            <h2 id="modalTitulo"></h2>
+            <p id="modalSinopse"></p>
+        </div>
+    </div>
+</div>
+
+<!-- LÓGICA DO MODAL E DADOS DOS FILMES -->
+<script>
+    const catalogo = {
+    "Amanhecer - Parte 1": { trailer: "https://www.youtube.com/embed/dIDUzT9r4DY", sinopse: "Bella e Edward se casam, mas a gravidez inesperada de um híbrido humano-vampiro consome as forças de Bella e ameaça a trégua com os lobisomens." },
+    "Breaking Bad": { trailer: "https://www.youtube.com/embed/_-Nv0JOcGxg", sinopse: "Um professor de química com câncer terminal se junta a um ex-aluno para fabricar metanfetamina e se transforma no temido chefão 'Heisenberg'." },
+    "Élite": { trailer: "https://www.youtube.com/embed/ui2yz8quM7I", sinopse: "Três alunos da escola pública entram em um colégio exclusivo da Espanha, desencadeando um choque cultural que termina em assassinato." },
+    "Homem-Aranha: Brand New Day": { trailer: "https://www.youtube.com/embed/bwt2-nyEP0A", sinopse: "Com sua identidade esquecida por todos, Peter Parker tenta recomeçar do zero combatendo o crime nas ruas de Nova York de forma anônima." },
+    "Lupin": { trailer: "https://www.youtube.com/embed/_khDS44AnSg", sinopse: "Inspirado por Arsène Lupin, Assane Diop planeja vingar seu pai, incriminado injustamente pelo roubo de um colar valioso." },
+    "O Mentalista": { trailer: "https://www.youtube.com/embed/q8CCIYfuHoE", sinopse: "Um ex-vidente usa suas incríveis habilidades de observação para ajudar a polícia enquanto caça Red John, o assassino de sua família." },
+    "Premonição 6: Laços de Sangue": { trailer: "https://www.youtube.com/embed/I9klkHlOvOs", sinopse: "Uma jovem tenta alterar o plano da Morte após prever acidentes fatais em sua família, mas descobre que a Morte persegue os sobreviventes." },
+    "Prison Break": { trailer: "https://www.youtube.com/embed/VNnb1WsNioo", sinopse: "Michael Scofield é preso de propósito com o mapa da prisão tatuado no corpo para salvar seu irmão inocente do corredor da morte." },
+    "Supergirl": { trailer: "https://www.youtube.com/embed/XvaUMy2LcOQ", sinopse: "Kara Zor-El decide abraçar seus poderes kryptonianos após anos em segredo e se tornar a protetora de National City." },
+    "Supernatural": { trailer: "https://www.youtube.com/embed/vMiLOPD2O0o", sinopse: "Os irmãos Sam e Dean Winchester viajam pelos EUA caçando criaturas sombrias e demônios enquanto tentam evitar o Apocalipse." },
+    "Teen Wolf O Filme": { trailer: "https://www.youtube.com/embed/0Sm-1Uw0rpg", sinopse: "Scott McCall reúne seus aliados para enfrentar um mal antigo em Beacon Hills e lidar com o retorno chocante de Allison Argent." },
+    "Teen Wolf (A Série)": { trailer: "https://www.youtube.com/embed/lt9r4pkY0IA", sinopse: "Um jovem comum é mordido por um lobisomem e ganha superpoderes, precisando proteger sua cidade de caçadores e monstros." }
+};
+
+    function abrirModal(titulo) {
+        const item = catalogo[titulo];
+        if (item) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalSinopse').innerText = item.sinopse;
+            document.getElementById('modalIframe').src = item.trailer + "?autoplay=1";
+            document.getElementById('modalTrailer').style.display = 'flex';
+        }
+    }
+
+    function fecharModal() {
+        document.getElementById('modalTrailer').style.display = 'none';
+        document.getElementById('modalIframe').src = "";
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('modalTrailer');
+        if (event.target === modal) {
+            fecharModal();
+        }
+    }
+</script>
+</body>
+</html>

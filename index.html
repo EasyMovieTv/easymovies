@@ -18,13 +18,6 @@
     <div class="bg-glow blob-2"></div>
     <div class="bg-glow blob-3"></div>
     <div class="stars-overlay"></div>
-    
-    <!-- Se quiser testar um VÍDEO MP4 real de fundo no futuro, basta desmarcar o código abaixo: -->
-    <!-- 
-    <video autoplay loop muted playsinline class="bg-video">
-      <source src="assets/fundo-vermelho.mp4" type="video/mp4">
-    </video> 
-    -->
   </div>
 
   <!-- HERO SECTION -->
@@ -128,7 +121,7 @@
         <ul>
           <li>Acesso a filmes e séries em HD</li>
           <li>1 Tela simultânea</li>
-          <li>Suporte via WhatsApp</li>
+          <li>Suporte Direto no Site</li>
         </ul>
        <a href="https://pay.kiwify.com.br/xkZpsGL" target="_blank" class="btn btn-red">QUERO ESSE PLANO</a>
       </div>
@@ -147,80 +140,81 @@
       </div>
     </div>
   </section>
-</section>
-<!-- FAIXA DE SUPORTE E LIBERAÇÃO NO WHATSAPP -->
-        <div style="text-align: center; margin: 30px auto; padding: 20px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(229, 9, 20, 0.4); border-radius: 8px; max-width: 700px; box-sizing: border-box; font-family: Arial, sans-serif;">
-            <a href="https://chat.whatsapp.com/IFtFnE0LncLBP2wAL7uiU2" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; color: #fff; gap: 15px;">
-                <!-- Ícone do WhatsApp -->
-                <i class="fab fa-whatsapp" style="font-size: 45px; color: #25D366; flex-shrink: 0;"></i>
-                <!-- Bloco de texto -->
-                <div style="text-align: left;">
-                    <span style="color: #e50914; font-weight: bold; display: block; font-size: 16px; margin-bottom: 4px; letter-spacing: 0.5px;">CLIQUE AQUI PARA LIBERAR SEU ACESSO</span>
-                    <p style="margin: 0; font-size: 13px; color: #aaa; line-height: 1.4;">
-                        Após a confirmação do pagamento, entre no nosso Grupo de Suporte no WhatsApp. É por lá que nossa equipe fará a liberação imediata do seu acesso!
-                    </p>
-                </div>
-            </a>
-        </div>
-<div class="urgency-container">
-    <div class="urgency-box">
-        <span class="urgency-pulse"></span>
-        <p>🚨 <strong>ÚLTIMOS 11 ACESSOS:</strong> disponíveis neste lote promocional!</p>
-    </div>
-</div>
 
-<!-- ESTRUTURA DO MODAL (JANELA FLUTUANTE) -->
-<div id="modalTrailer" class="modal-overlay">
-    <div class="modal-content">
-       <span class="modal-close" onclick="fecharModal()">&times;</span>
-        <div class="modal-video-container">
-            <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="modal-info">
-            <h2 id="modalTitulo"></h2>
-            <p id="modalSinopse"></p>
-        </div>
-    </div>
-</div>
+  <div class="urgency-container">
+      <div class="urgency-box">
+          <span class="urgency-pulse"></span>
+          <p>🚨 <strong>ÚLTIMOS 11 ACESSOS:</strong> disponíveis neste lote promocional!</p>
+      </div>
+  </div>
 
-<!-- LÓGICA DO MODAL E DADOS DOS FILMES -->
-<script>
-    const catalogo = {
-    "Amanhecer - Parte 1": { trailer: "https://www.youtube.com/embed/dIDUzT9r4DY", sinopse: "Bella e Edward se casam, mas a gravidez inesperada de um híbrido humano-vampiro consome as forças de Bella e ameaça a trégua com os lobisomens." },
-    "Breaking Bad": { trailer: "https://www.youtube.com/embed/_-Nv0JOcGxg", sinopse: "Um professor de química com câncer terminal se junta a um ex-aluno para fabricar metanfetamina e se transforma no temido chefão 'Heisenberg'." },
-    "Élite": { trailer: "https://www.youtube.com/embed/ui2yz8quM7I", sinopse: "Três alunos da escola pública entram em um colégio exclusivo da Espanha, desencadeando um choque cultural que termina em assassinato." },
-    "Homem-Aranha: Brand New Day": { trailer: "https://www.youtube.com/embed/bwt2-nyEP0A", sinopse: "Com sua identidade esquecida por todos, Peter Parker tenta recomeçar do zero combatendo o crime nas ruas de Nova York de forma anônima." },
-    "Lupin": { trailer: "https://www.youtube.com/embed/_khDS44AnSg", sinopse: "Inspirado por Arsène Lupin, Assane Diop planeja vingar seu pai, incriminado injustamente pelo roubo de um colar valioso." },
-    "O Mentalista": { trailer: "https://www.youtube.com/embed/q8CCIYfuHoE", sinopse: "Um ex-vidente usa suas incríveis habilidades de observação para ajudar a polícia enquanto caça Red John, o assassino de sua família." },
-    "Premonição 6: Laços de Sangue": { trailer: "https://www.youtube.com/embed/I9klkHlOvOs", sinopse: "Uma jovem tenta alterar o plano da Morte após prever acidentes fatais em sua família, mas descobre que a Morte persegue os sobreviventes." },
-    "Prison Break": { trailer: "https://www.youtube.com/embed/VNnb1WsNioo", sinopse: "Michael Scofield é preso de propósito com o mapa da prisão tatuado no corpo para salvar seu irmão inocente do corredor da morte." },
-    "Supergirl": { trailer: "https://www.youtube.com/embed/XvaUMy2LcOQ", sinopse: "Kara Zor-El decide abraçar seus poderes kryptonianos após anos em segredo e se tornar a protetora de National City." },
-    "Supernatural": { trailer: "https://www.youtube.com/embed/vMiLOPD2O0o", sinopse: "Os irmãos Sam e Dean Winchester viajam pelos EUA caçando criaturas sombrias e demônios enquanto tentam evitar o Apocalipse." },
-    "Teen Wolf O Filme": { trailer: "https://www.youtube.com/embed/0Sm-1Uw0rpg", sinopse: "Scott McCall reúne seus aliados para enfrentar um mal antigo em Beacon Hills e lidar com o retorno chocante de Allison Argent." },
-    "Teen Wolf (A Série)": { trailer: "https://www.youtube.com/embed/lt9r4pkY0IA", sinopse: "Um jovem comum é mordido por um lobisomem e ganha superpoderes, precisando proteger sua cidade de caçadores e monstros." }
-};
+  <!-- ESTRUTURA DO MODAL (JANELA FLUTUANTE) -->
+  <div id="modalTrailer" class="modal-overlay">
+      <div class="modal-content">
+         <span class="modal-close" onclick="fecharModal()">&times;</span>
+          <div class="modal-video-container">
+              <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="modal-info">
+              <h2 id="modalTitulo"></h2>
+              <p id="modalSinopse"></p>
+          </div>
+      </div>
+  </div>
 
-    function abrirModal(titulo) {
-        const item = catalogo[titulo];
-        if (item) {
-            document.getElementById('modalTitulo').innerText = titulo;
-            document.getElementById('modalSinopse').innerText = item.sinopse;
-            document.getElementById('modalIframe').src = item.trailer + "?autoplay=1";
-            document.getElementById('modalTrailer').style.display = 'flex';
-        }
-    }
+  <!-- LÓGICA DO MODAL E DADOS DOS FILMES -->
+  <script>
+      const catalogo = {
+      "Amanhecer - Parte 1": { trailer: "https://www.youtube.com/embed/dIDUzT9r4DY", sinopse: "Bella e Edward se casam, mas a gravidez inesperada de um híbrido humano-vampiro consome as forças de Bella e ameaça a trégua com os lobisomens." },
+      "Breaking Bad": { trailer: "https://www.youtube.com/embed/_-Nv0JOcGxg", sinopse: "Um professor de química com câncer terminal se junta a um ex-aluno para fabricar metanfetamina e se transforma no temido chefão 'Heisenberg'." },
+      "Élite": { trailer: "https://www.youtube.com/embed/ui2yz8quM7I", sinopse: "Três alunos da escola pública entram em um colégio exclusivo da Espanha, desencadeando um choque cultural que termina em assassinato." },
+      "Homem-Aranha: Brand New Day": { trailer: "https://www.youtube.com/embed/bwt2-nyEP0A", sinopse: "Com sua identidade esquecida por todos, Peter Parker tenta recomeçar do zero combatendo o crime nas ruas de Nova York de forma anônima." },
+      "Lupin": { trailer: "https://www.youtube.com/embed/_khDS44AnSg", sinopse: "Inspirado por Arsène Lupin, Assane Diop planeja vingar seu pai, incriminado injustamente pelo roubo de um colar valioso." },
+      "O Mentalista": { trailer: "https://www.youtube.com/embed/q8CCIYfuHoE", sinopse: "Um ex-vidente usa suas incríveis habilidades de observação para ajudar a polícia enquanto caça Red John, o assassino de sua família." },
+      "Premonição 6: Laços de Sangue": { trailer: "https://www.youtube.com/embed/I9klkHlOvOs", sinopse: "Uma jovem tenta alterar o plano da Morte após prever acidentes fatais em sua família, mas descobre que a Morte persegue os sobreviventes." },
+      "Prison Break": { trailer: "https://www.youtube.com/embed/VNnb1WsNioo", sinopse: "Michael Scofield é preso de propósito com o mapa da prisão tatuado no corpo para salvar seu irmão inocente do corredor da morte." },
+      "Supergirl": { trailer: "https://www.youtube.com/embed/XvaUMy2LcOQ", sinopse: "Kara Zor-El decide abraçar seus poderes kryptonianos após anos em segredo e se tornar a protetora de National City." },
+      "Supernatural": { trailer: "https://www.youtube.com/embed/vMiLOPD2O0o", sinopse: "Os irmãos Sam e Dean Winchester viajam pelos EUA caçando criaturas sombrias e demônios enquanto tentam evitar o Apocalipse." },
+      "Teen Wolf O Filme": { trailer: "https://www.youtube.com/embed/0Sm-1Uw0rpg", sinopse: "Scott McCall reúne seus aliados para enfrentar um mal antigo em Beacon Hills e lidar com o retorno chocante de Allison Argent." },
+      "Teen Wolf (A Série)": { trailer: "https://www.youtube.com/embed/lt9r4pkY0IA", sinopse: "Um jovem comum é mordido por um lobisomem e ganha superpoderes, precisando proteger sua cidade de caçadores e monstros." }
+  };
 
-    function fecharModal() {
-        document.getElementById('modalTrailer').style.display = 'none';
-        document.getElementById('modalIframe').src = "";
-    }
+      function abrirModal(titulo) {
+          const item = catalogo[titulo];
+          if (item) {
+              document.getElementById('modalTitulo').innerText = titulo;
+              document.getElementById('modalSinopse').innerText = item.sinopse;
+              document.getElementById('modalIframe').src = item.trailer + "?autoplay=1";
+              document.getElementById('modalTrailer').style.display = 'flex';
+          }
+      }
 
-    window.onclick = function(event) {
-        const modal = document.getElementById('modalTrailer');
-        if (event.target === modal) {
-            fecharModal();
-        }
-    }
-</script>
+      function fecharModal() {
+          document.getElementById('modalTrailer').style.display = 'none';
+          document.getElementById('modalIframe').src = "";
+      }
+
+      window.onclick = function(event) {
+          const modal = document.getElementById('modalTrailer');
+          if (event.target === modal) {
+              fecharModal();
+          }
+      }
+  </script>
+
+  <!-- ========================================================= -->
+  <!-- TAWK.TO - CHAT DE SUPORTE PROFISSIONAL                    -->
+  <!-- ========================================================= -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6a7e368ab48ee21d4b06dd34/1jvuga3rk';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
 </body>
 </html>
